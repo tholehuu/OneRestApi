@@ -25,7 +25,7 @@ export default class RapTreeItem extends vscode.TreeItem {
   }
 
   iconPath = {
-    light: path.join(
+    light: vscode.Uri.file(path.join(
       __filename,
       "..",
       "..",
@@ -34,8 +34,8 @@ export default class RapTreeItem extends vscode.TreeItem {
       "resources",
       "light",
       this.iconName
-    ),
-    dark: path.join(
+    )),
+    dark: vscode.Uri.file(path.join(
       __filename,
       "..",
       "..",
@@ -44,6 +44,6 @@ export default class RapTreeItem extends vscode.TreeItem {
       "resources",
       "dark",
       this.iconName
-    )
+    ))
   };
 }

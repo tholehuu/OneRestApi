@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import RequestModel from '../models/request';
 import { isBlank } from '../utils/index';
 
+//import request from 'request/promise';
 const request = require("request-promise");
 
 export default class Request {

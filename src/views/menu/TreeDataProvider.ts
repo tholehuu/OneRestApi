@@ -19,7 +19,7 @@ export default class RapTreeDataProvider implements vscode.TreeDataProvider<Tree
       new TreeItem("New Request", vscode.TreeItemCollapsibleState.None, {
         command: "RestClient.newRequest",
         title: "New Request"
-      }, "new-request.png"),
+      }, "new-request.png")//,
     //   new HistoryTreeItem("History", vscode.TreeItemCollapsibleState.Collapsed, {
     //     command: '',
     //     title: "History"
@@ -28,8 +28,12 @@ export default class RapTreeDataProvider implements vscode.TreeDataProvider<Tree
   }
 
   refresh(): void {
-    this._onDidChangeTreeData.fire();
+    const data = this.getItem();
+    this._onDidChangeTreeData.fire(data);
   }
+  // refresh(): void {
+  //   this._onDidChangeTreeData.fire();
+  // }
   
   getTreeItem(element: TreeItem): vscode.TreeItem {
     return element;
